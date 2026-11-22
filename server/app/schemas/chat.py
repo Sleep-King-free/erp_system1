@@ -9,6 +9,7 @@ class ChatRecordCreate(BaseModel):
 
     customer_id: int
     content: str
+    channel: str | None = None
 
 
 class ChatRecordOut(BaseModel):

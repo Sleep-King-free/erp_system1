@@ -17,3 +17,6 @@ class Customer(Base):
     owner_id: Mapped[int] = mapped_column(
         ForeignKey("users.id"), nullable=False, index=True, comment="归属销售（关联用户）"
     )
+    importance_level: Mapped[str] = mapped_column(
+        String(20), nullable=False, default="普通", comment="重要性分级：VIP/普通"
+    )

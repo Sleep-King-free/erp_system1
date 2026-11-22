@@ -7,7 +7,7 @@ from sqlalchemy import text
 from sqlalchemy.orm import Session
 
 from app import models  # noqa: F401  导入模型以注册到 Base.metadata，供 create_all 建表
-from app.api.v1 import chat, document
+from app.api.v1 import chat, customer, document, report, tag
 from app.db.session import Base, engine, get_db
 
 
@@ -31,7 +31,11 @@ app.add_middleware(
 
 # 注册路由
 app.include_router(chat.router)
+app.include_router(customer.router)
 app.include_router(document.router)
+app.include_router(report.router)
+app.include_router(tag.router)
+
 
 @app.get("/")
 def root():
@@ -45,4 +49,3 @@ def test_db(db: Session = Depends(get_db)):
     except Exception as exc:  # noqa: BLE001 - 返回可读错误信息
         raise HTTPException(status_code=500, detail=f"数据库连接失败：{exc}")
     return {"message": "数据库连接成功", "mysql_version": version}
-

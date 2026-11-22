@@ -21,6 +21,7 @@ def create_chat_record(payload: ChatRecordCreate, db: Session = Depends(get_db))
     record = ChatRecord(
         customer_id=payload.customer_id,
         content=payload.content,
+        channel=payload.channel,
         occurred_at=datetime.now(),
     )
     db.add(record)
