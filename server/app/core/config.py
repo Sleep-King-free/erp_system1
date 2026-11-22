@@ -32,6 +32,11 @@ class Settings(BaseSettings):
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
 
+    # AI 大模型（OpenAI 兼容接口，如 OpenAI/DeepSeek/通义/智谱等）
+    AI_API_KEY: str = ""
+    AI_BASE_URL: str = "https://api.openai.com/v1/chat/completions"
+    AI_MODEL: str = "gpt-4o-mini"
+
 
 @lru_cache
 def get_settings() -> Settings:
