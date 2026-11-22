@@ -7,7 +7,7 @@ from sqlalchemy import text
 from sqlalchemy.orm import Session
 
 from app import models  # noqa: F401  导入模型以注册到 Base.metadata，供 create_all 建表
-from app.api.v1 import chat
+from app.api.v1 import chat, document
 from app.db.session import Base, engine, get_db
 
 
@@ -31,7 +31,7 @@ app.add_middleware(
 
 # 注册路由
 app.include_router(chat.router)
-
+app.include_router(document.router)
 
 @app.get("/")
 def root():
