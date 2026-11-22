@@ -2,6 +2,7 @@
 from app.models.audit_task import AuditTask
 from app.models.chat_record import ChatRecord
 from app.models.customer import Customer
+from app.models.document import Document
 from app.models.profile_snapshot import ProfileSnapshot
 from app.models.user import User
 
@@ -11,4 +12,5 @@ __all__ = [
     "ChatRecord",
     "ProfileSnapshot",
     "AuditTask",
+    "Document",
 ]
