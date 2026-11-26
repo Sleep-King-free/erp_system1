@@ -5,6 +5,7 @@ from app.models.audit_task import AuditTask
 from app.models.chat_record import ChatRecord
 from app.models.customer import Customer
 from app.models.document import Document
+from app.models.document_item import DocumentItem
 from app.models.order import Order
 from app.models.tag import Tag
 from app.models.tag_rule import TagRule
@@ -18,6 +19,7 @@ __all__ = [
     "AnalysisField",
     "AuditTask",
     "Document",
+    "DocumentItem",
     "Order",
     "Tag",
     "TagRule",
